@@ -1,0 +1,246 @@
+at line_no 321, adding 'finish_task_switch' to root_list
+at line_no 322, adding '_raw_spin_lock_irq' to root_list
+at line_no 462, adding 'process_one_work' to root_list
+at line_no 463, adding 'worker_enter_idle' to root_list
+at line_no 763, adding 'finish_task_switch' to root_list
+at line_no 4786350, adding 'do_idle' to root_list
+at line_no 4786351, adding '_raw_spin_lock_irq' to root_list
+at line_no 4786411, adding 'process_one_work' to root_list
+at line_no 4787700, adding 'process_one_work' to root_list
+at line_no 4787701, adding 'worker_enter_idle' to root_list
+at line_no 9993469, adding 'schedule' to root_list
+at line_no 9993470, adding '_raw_spin_lock_irq' to root_list
+at line_no 9994729, adding 'process_one_work' to root_list
+at line_no 9994789, adding 'process_one_work' to root_list
+at line_no 9994790, adding 'worker_enter_idle' to root_list
+at line_no 12251423, adding 'SyS_move_pages' to root_list
+Function                            Count Time       Average  Local      Sub-time Max-sub                             Ms count
+----------------------------------- ----- ---------- -------- ---------- -------- ----------------------------------- --------
+SyS_move_pages                          1 2340382000 2340382000   78124496 2262257504                       migrate_pages      388
+migrate_pages                         388 2033823974  5241814  209763510 1824060464                        try_to_unmap    65535
+schedule                                2  991775625 495887812  991683519    92106                      _raw_spin_lock        4
+rmap_walk                           131070  935340584     7136   32136784 903203800                      rmap_walk_anon   131070
+do_idle                                 1  918727700 918727700  918712703    14997                  sched_ttwu_pending        1
+rmap_walk_anon                      131070  903203800     6891  274701234 628502566                    try_to_unmap_one    65535
+try_to_unmap                        65535  550518843     8400   16303590 534215253                           rmap_walk    65535
+remove_migration_ptes               65535  417141290     6365   16015959 401125331                           rmap_walk    65535
+move_to_new_page                    65535  284032526     4334   31585570 252446956                        migrate_page    65535
+try_to_unmap_one                    65535  268584114     4098   91991764 176592350                page_vma_mapped_walk   131070
+migrate_page                        65535  250711263     3825   31320160 219391103                   migrate_page_copy    65535
+__put_page                          65535  223787036     3414   31442089 192344947                __page_cache_release    65535
+migrate_page_copy                   65535  217489605     3318   95945052 121544553                 migrate_page_states    65535
+remove_migration_pte                65535  169509163     2586   61712795 107796368                page_vma_mapped_walk   131070
+putback_lru_page                    65535  158486244     2418   16700197 141786047                       lru_cache_add    65535
+lru_cache_add                       65535  141786047     2163   16416841 125369206                     __lru_cache_add    65535
+new_page_node                       65535  126590796     1931   35308273 91282523              __alloc_pages_nodemask    65535
+__lru_cache_add                     65535  125369206     1913    2783035 122586171                 pagevec_lru_move_fn     4369
+pagevec_lru_move_fn                  4370  122618127    28059   33190351 89427776                __pagevec_lru_add_fn    65547
+follow_page_mask                    65536  119790037     1827   46970902 72819135                     follow_pmd_mask    65536
+migrate_page_states                 65535  119763444     1827   62071804 57691640                  mem_cgroup_migrate    65535
+__page_cache_release                65535  119349447     1821   16432836 102916611                 mem_cgroup_uncharge    65535
+page_vma_mapped_walk                262140  109633993      418   98043950 11590043                            PageHuge   131070
+mem_cgroup_uncharge                 65535  102916611     1570   31594445 71322166                      uncharge_batch    65535
+_cond_resched                       328089   90544557      275   82170464  8374093                          rcu_all_qs   328086
+__alloc_pages_nodemask              65536   89598983     1367   31241517 58357466                       _cond_resched    65536
+isolate_lru_page                    65535   86266539     1316   77714629  8551910               __mod_node_page_state    65535
+__pagevec_lru_add_fn                65547   84476629     1288   61556011 22920618                      page_evictable    65547
+free_unref_page                     65536   72996621     1113   46701905 26294716              free_unref_page_commit    65536
+uncharge_batch                      65535   69494854     1060   32617485 36877369               page_counter_uncharge    65535
+follow_pmd_mask                     65536   69344937     1058   31747002 37597935                     follow_page_pte    65536
+ptep_clear_flush                    65535   66668644     1017   16358753 50309891                  flush_tlb_mm_range    65535
+mem_cgroup_migrate                  65535   52519369      801   46665034  5854335                  memcg_check_events    65535
+page_add_anon_rmap                  65535   51384028      784   16542654 34841374               do_page_add_anon_rmap    65535
+page_lock_anon_vma_read             65535   51046448      778   45774412  5272036                         page_mapped   131070
+flush_tlb_mm_range                  65535   50309891      767   17425752 32884139  flush_tlb_func_common.constprop.11    65535
+get_page_from_freelist              65536   40354015      615   36834926  3519089                      _raw_spin_lock     2115
+anon_vma_interval_tree_iter_first   131070   36046488      275   32681439  3365049 __anon_vma_interval_tree_subtree_search   131070
+follow_page_pte                     65536   35856637      547   32405514  3451123                      _raw_spin_lock    65536
+down_read                           65923   34998733      530   16548864 18449869                       _cond_resched    65923
+page_counter_uncharge               65535   34893878      532   31517790  3376088                 page_counter_cancel   131070
+page_get_anon_vma                   65535   34886044      532   31327660  3558384                         page_mapped   131070
+do_page_add_anon_rmap               65535   34841374      531   31337109  3504265               __mod_node_page_state    65535
+page_remove_rmap                    65535   34724034      529   16708854 18015180               __dec_node_page_state    65535
+flush_tlb_func_common.constprop.11  65535   32884139      501   16772817 16111322           native_flush_tlb_one_user    65535
+free_unref_page_commit              65536   22543699      343    2329973 20213726                  free_pcppages_bulk     2109
+free_pcppages_bulk                   2109   20213726     9584   18461056  1752670                      _raw_spin_lock     2109
+set_page_dirty                      65535   18478863      281   16788956  1689907                        page_mapping    65535
+find_vma                            65536   18410259      280   16523865  1886394                       vmacache_find    65536
+__dec_node_page_state               65535   18015180      274   16214379  1800801                    __dec_node_state    65535
+page_evictable                      65547   17898082      273   16219727  1678355                        page_mapping    65547
+page_mapcount_is_zero               65535   17834389      272   16141762  1692627                      total_mapcount    65535
+native_flush_tlb_one_user           65535   16111322      245   16111322        0                                            0
+PageHuge                            524280   13703660       26   13703660        0                                            0
+page_mapped                         393210   10514795       26   10514795        0                                            0
+rcu_all_qs                          328086    8332389       25    8331845      544                  rcu_all_qs.part.62        1
+PageHeadHuge                        262140    6601099       25    6601099        0                                            0
+_raw_spin_lock                      200859    5333100       26    5333100        0                                            0
+__mod_node_page_state               196617    5161153       26    5161153        0                                            0
+page_mapping                        196617    5103955       25    5103955        0                                            0
+__mod_zone_page_state               198576    5092939       25    5092939        0                                            0
+check_pte                           131070    4780693       36    4780693        0                                            0
+memcg_check_events                  131070    4000991       30    3933953    67038              __mem_cgroup_threshold     2032
+mod_node_page_state                 131070    3564781       27    3564781        0                                            0
+page_cpupid_xchg_last               131070    3484390       26    3484390        0                                            0
+up_read                             131458    3458489       26    3458489        0                                            0
+__inc_numa_state                    131072    3388342       25    3388342        0                                            0
+unlock_page                         131070    3380826       25    3380826        0                                            0
+mem_cgroup_update_lru_size          131082    3378901       25    3378901        0                                            0
+page_counter_cancel                 131070    3376088       25    3376088        0                                            0
+mem_cgroup_page_lruvec              131082    3373494       25    3373494        0                                            0
+__anon_vma_interval_tree_subtree_search 131070    3365049       25    3365049        0                                            0
+release_pages                        4370    2684337      614    2396709   287628                free_unref_page_list     4370
+page_counter_charge                 65535    2076258       31    2076258        0                                            0
+free_unref_page_prepare.part.64     65536    1976003       30    1976003        0                                            0
+migrate_page_move_mapping           65535    1901498       29    1901498        0                                            0
+vmacache_find                       65536    1886394       28    1886394        0                                            0
+uncharge_page                       65535    1827312       27    1827312        0                                            0
+__dec_node_state                    65535    1800801       27    1800801        0                                            0
+free_pcp_prepare                    65536    1775014       27    1775014        0                                            0
+mem_cgroup_charge_statistics        65535    1760577       26    1760577        0                                            0
+pud_huge                            65536    1759014       26    1759014        0                                            0
+_raw_spin_lock_irq                  65545    1750795       26    1750795        0                                            0
+down_read_trylock                   65535    1744121       26    1744121        0                                            0
+pmd_huge                            65536    1741298       26    1741298        0                                            0
+__page_set_anon_rmap                65535    1734467       26    1734467        0                                            0
+follow_huge_addr                    65536    1715184       26    1715184        0                                            0
+_vm_normal_page                     65535    1708260       26    1708260        0                                            0
+page_anon_vma                       65535    1694264       25    1694264        0                                            0
+total_mapcount                      65535    1692627       25    1692627        0                                            0
+ksm_migrate_page                    65535    1687881       25    1687881        0                                            0
+anon_vma_interval_tree_iter_next    65535    1652248       25    1652248        0                                            0
+invalid_migration_vma               65535    1632251       24    1632251        0                                            0
+process_one_work                        5     660948   132189       6900   654048                       _cond_resched        5
+vmstat_shepherd                         2     595541   297770      47944   547597                         need_update      145
+need_update                           145     536031     3696     415806   120225                           next_zone     1447
+_raw_spin_unlock_irqrestore          4389     472345      107     472345        0                                            0
+lru_add_drain_all                       1     259170   259170      11447   247723                          flush_work        7
+flush_work                              7     189369    27052       7228   182141                       _cond_resched        7
+free_unref_page_list                 4370     173227       39     173227        0                                            0
+_raw_spin_lock_irqsave               4389     134801       30     134351      450    native_queued_spin_lock_slowpath        1
+next_zone                            1467     118224       80     107192    11032                   next_online_pgdat      293
+mem_cgroup_uncharge_list             4370     114401       26     114401        0                                            0
+wait_for_completion                     1      97618    97618       1351    96267                       _cond_resched        1
+schedule_timeout                        1      95701    95701        576    95125                            schedule        1
+pick_next_task_fair                     8      93562    11695      14699    78863                      _raw_spin_lock        1
+__mem_cgroup_threshold               2032      67038       32      67038        0                                            0
+__queue_work                            8      58828     7353       6513    52315                      _raw_spin_lock        8
+queue_work_on                           7      57267     8181       1882    55385                        __queue_work        7
+load_balance                            3      54169    18056       1979    52190                  find_busiest_group        3
+find_busiest_group                      3      52190    17396      44600     7590                            idle_cpu      133
+insert_work                             9      51249     5694       6020    45229                     wake_up_process        8
+wake_up_process                         8      44987     5623       2178    42809                      try_to_wake_up        8
+try_to_wake_up                          8      42809     5351      12000    30809                      _raw_spin_lock        3
+ttwu_do_activate                        4      38629     9657       3075    35554                       activate_task        4
+lru_add_drain_per_cpu                   1      32631    32631        353    32278                   lru_add_drain_cpu        1
+lru_add_drain_cpu                       1      32278    32278        322    31956                 pagevec_lru_move_fn        1
+activate_task                           4      29267     7316       1452    27815                   enqueue_task_fair        4
+enqueue_task_fair                       4      27815     6953       2688    25127                      enqueue_entity        5
+enqueue_entity                          5      25020     5004      15794     9226        __update_load_avg_se.isra.38        5
+vmstat_update                           2      22788    11394       1937    20851                refresh_cpu_vm_stats        2
+enter_lazy_tlb                          4      21259     5314       1038    20221                           switch_mm        4
+switch_mm_irqs_off                      8      21169     2646       4190    16979                     load_new_mm_cr3        8
+switch_mm                               4      20221     5055       1224    18997                  switch_mm_irqs_off        4
+__get_free_pages                        1      17473    17473        430    17043                 alloc_pages_current        1
+alloc_pages_current                     1      17043    17043        953    16090              __alloc_pages_nodemask        1
+load_new_mm_cr3                         8      16979     2122      16979        0                                            0
+deactivate_task                         4      16946     4236       1380    15566                   dequeue_task_fair        4
+refresh_cpu_vm_stats                    2      16250     8125      11264     4986                       _cond_resched        8
+dequeue_task_fair                       4      15566     3891       2716    12850                      dequeue_entity        5
+queue_delayed_work_on                   5      14595     2919       1729    12866                __queue_delayed_work        5
+put_prev_entity                        11      14134     1284       8710     5424        __update_load_avg_se.isra.38        6
+__queue_delayed_work                    5      12866     2573       1535    11331                        __queue_work        1
+dequeue_entity                          5      12745     2549       7261     5484        __update_load_avg_se.isra.38        5
+sched_ttwu_pending                      1      12284    12284       1284    11000         _raw_spin_unlock_irqrestore        1
+next_online_pgdat                     297      11182       37      11182        0                                            0
+__update_load_avg_se.isra.38           28       9476      338       8564      912                          decay_load       21
+update_curr                            20       7413      370       6165     1248                      cpuacct_charge        7
+idle_cpu                              133       6931       52       6931        0                                            0
+pick_next_entity                       11       5047      458       4565      482                       clear_buddies       11
+ttwu_do_wakeup                          4       4617     1154       1615     3002                  check_preempt_curr        4
+add_timer                               2       4403     2201       2858     1545         _raw_spin_unlock_irqrestore        2
+set_next_entity                        11       4203      382       3730      473        __update_load_avg_se.isra.38       11
+first_online_pgdat                    149       3959       26       3959        0                                            0
+add_timer_on                            2       3485     1742       2033     1452         _raw_spin_unlock_irqrestore        2
+check_preempt_curr                      4       3002      750       1364     1638                check_preempt_wakeup        1
+get_work_pool                          15       2447      163       2447        0                                            0
+pick_next_task_idle                     1       2103     2103        593     1510                  put_prev_task_fair        1
+free_pages                              1       2072     2072        245     1827                  free_pages.part.89        1
+free_pages.part.89                      1       1827     1827        245     1582                        __free_pages        1
+wq_worker_waking_up                     3       1670      556        750      920                        kthread_data        3
+__free_pages                            1       1582     1582        461     1121                     free_unref_page        1
+update_blocked_averages                 1       1529     1529       1356      173         _raw_spin_unlock_irqrestore        1
+put_prev_task_fair                      1       1452     1452        679      773                     put_prev_entity        2
+pwq_dec_nr_in_flight                    5       1447      289       1319      128                             put_pwq        5
+tick_nohz_idle_enter                    1       1397     1397        745      652              __tick_nohz_idle_enter        1
+__internal_add_timer                    4       1324      331       1179      145                    calc_wheel_index        4
+cpuset_mems_allowed                     1       1319     1319        883      436         _raw_spin_unlock_irqrestore        1
+lock_timer_base                         4       1310      327       1016      294              _raw_spin_lock_irqsave        4
+cpus_read_lock                          2       1292      646        628      664                       _cond_resched        2
+tick_nohz_idle_exit                     1       1261     1261        716      545                update_ts_time_stats        1
+ptrace_may_access                       1       1212     1212        990      222                      _raw_spin_lock        1
+check_preempt_wakeup                    1       1210     1210        963      247                         update_curr        1
+decay_load                             39       1203       30       1203        0                                            0
+update_cfs_group                       10       1199      119       1081      118                     reweight_entity        2
+mutex_lock                              1       1042     1042        473      569                       _cond_resched        1
+kthread_data                            6       1021      170       1021        0                                            0
+wq_worker_sleeping                      3        852      284        751      101                        kthread_data        3
+finish_task_switch                      8        733       91        733        0                                            0
+cpuacct_charge                          7        733      104        733        0                                            0
+update_rq_clock                        13        729       56        729        0                                            0
+account_entity_enqueue                  5        708      141        708        0                                            0
+update_group_capacity                   2        659      329        601       58                  __msecs_to_jiffies        2
+rcu_all_qs.part.62                      1        544      544        518       26         rcu_dynticks_momentary_idle        1
+fold_diff                               2        541      270        541        0                                            0
+mmput                                   1        513      513        246      267                       _cond_resched        1
+clear_buddies                          16        509       31        509        0                                            0
+update_ts_time_stats                    1        498      498        470       28                       nr_iowait_cpu        1
+resched_curr                            4        464      116        464        0                                            0
+check_cfs_rq_runtime                   17        455       26        455        0                                            0
+native_queued_spin_lock_slowpath        1        450      450        450        0                                            0
+__accumulate_pelt_segments             13        449       34        449        0                                            0
+__enqueue_entity                       11        437       39        437        0                                            0
+update_min_vruntime                     9        436       48        436        0                                            0
+security_task_movememory                1        432      432        432        0                                            0
+__tick_nohz_idle_enter                  1        399      399        300       99                           ktime_get        1
+get_task_mm                             1        300      300        272       28                      _raw_spin_lock        1
+account_entity_dequeue                  5        279       55        279        0                                            0
+set_cpu_sd_state_idle                   1        253      253        253        0                                            0
+rcu_note_context_switch                 8        252       31        252        0                                            0
+get_pwq.isra.19                         9        242       26        242        0                                            0
+round_jiffies_relative                  4        227       56        227        0                                            0
+ttwu_stat                               8        215       26        215        0                                            0
+wakeup_preempt_entity.isra.66           4        212       53        212        0                                            0
+hrtick_update                           8        212       26        212        0                                            0
+guarantee_online_mems                   1        174      174        174        0                                            0
+worker_enter_idle                       3        172       57        172        0                                            0
+intel_pstate_update_util                4        154       38        154        0                                            0
+__msecs_to_jiffies                      5        147       29        147        0                                            0
+ktime_get                               2        146       73        146        0                                            0
+calc_wheel_index                        4        145       36        145        0                                            0
+set_work_pool_and_clear_pending         5        132       26        132        0                                            0
+trigger_dyntick_cpu.isra.35             4        131       32        131        0                                            0
+put_pwq                                 5        128       25        128        0                                            0
+reweight_entity                         2        118       59        118        0                                            0
+__calc_delta                            2         79       39         79        0                                            0
+set_next_buddy                          1         71       71         71        0                                            0
+__update_idle_core                      1         58       58         58        0                                            0
+get_nohz_timer_target                   2         55       27         55        0                                            0
+cpus_read_unlock                        2         53       26         53        0                                            0
+detach_if_pending                       2         53       26         53        0                                            0
+mutex_unlock                            1         45       45         45        0                                            0
+get_task_policy.part.29                 1         41       41         41        0                                            0
+put_prev_task_idle                      1         37       37         37        0                                            0
+__ptrace_may_access                     1         36       36         36        0                                            0
+check_flush_dependency                  1         29       29         29        0                                            0
+policy_node                             1         28       28         28        0                                            0
+nr_iowait_cpu                           1         28       28         28        0                                            0
+policy_nodemask                         1         27       27         27        0                                            0
+__init_waitqueue_head                   1         27       27         27        0                                            0
+rcu_dynticks_momentary_idle             1         26       26         26        0                                            0
+[user-space]                            0          0        0          0 4251451883                      SyS_move_pages        1
+schedule_idle                           0          0        0          0     4351                      _raw_spin_lock        1
+Trace stats:
+   8823152 total functions
+   missing callers: 0
+   missing exits: 2
+   closed unknown functions: 0 times
