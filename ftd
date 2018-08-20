@@ -280,6 +280,8 @@ def parse_funcgraph_lines(lines):
 	line_no = 0
 	for line in lines:
 		line_no += 1
+		if (line_no%10000) == 0:
+			print("Dealing with line %d " % line_no)
 
 		# skip blank lines
 		if not line.strip():
