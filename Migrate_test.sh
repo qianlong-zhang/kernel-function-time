@@ -2,13 +2,18 @@
 
 #!!!!!!!!!!!!  Run  AS ROOT !!!!!!!!!!!!!
 
+#!!!! Can not use $1 to input parameter, because line 61 PID0=... will return two values
+#!!!! which will cause PID0 looks like: 31100    32400
+
+BENCH_NAME=cg.C.x
+
 PWD=`pwd`
 SYS_TRACE_PATH=/sys/kernel/debug/tracing/
 BENCH_PATH=`pwd`
 cd $SYS_TRACE_PATH
 pwd
 echo "Configuring ftrace..."
-
+#echo function >current_tracer
 echo 0 >tracing_on
 echo 0 >trace
 echo function_graph >current_tracer
@@ -30,23 +35,23 @@ echo SyS_migrate_pages >> set_ftrace_filter
       echo  queue_pages_range>> set_ftrace_filter
         echo walk_page_range >> set_ftrace_filter
       echo migrate_pages >> set_ftrace_filter
-          echo PageHuge >> set_ftrace_filter
-          echo _cond_resched >> set_ftrace_filter
+#          echo PageHuge >> set_ftrace_filter
+#          echo _cond_resched >> set_ftrace_filter
           echo new_node_page >> set_ftrace_filter
           echo page_get_anon_vma >> set_ftrace_filter
-          echo page_mapped >> set_ftrace_filter
+#          echo page_mapped >> set_ftrace_filter
           echo try_to_unmap >>set_ftrace_filter
           echo move_to_new_page >> set_ftrace_filter
-          echo unlock_page >> set_ftrace_filter
-          echo putback_lru_page >> set_ftrace_filter
-          echo mod_node_page_state >> set_ftrace_filter
+#          echo unlock_page >> set_ftrace_filter
+#          echo putback_lru_page >> set_ftrace_filter
+#          echo mod_node_page_state >> set_ftrace_filter
           echo __put_page >> set_ftrace_filter
           echo remove_migration_ptes >> set_ftrace_filter
             echo rmap_walk >> set_ftrace_filter
               echo try_to_unmap_one >> set_ftrace_filter
-                echo ptep_clear_flush >> set_ftrace_filter
-                  echo flush_tlb_mm_range >> set_ftrace_filter
-                    echo native_flush_tlb_others >> set_ftrace_filter
+#                echo ptep_clear_flush >> set_ftrace_filter
+#                  echo flush_tlb_mm_range >> set_ftrace_filter
+#                    echo native_flush_tlb_others >> set_ftrace_filter
                       echo flush_tlb_func_remote >> set_ftrace_filter
 
 echo 1000000  > per_cpu/cpu0/buffer_size_kb
@@ -58,10 +63,10 @@ sleep 0.000001
 cd $BENCH_PATH
 
 echo "Running benchmark..."
-su - zhangqianlong -c "mpirun -np 22 --report-bindings  -rf rank  graph500_reference_bfs 21 16  &>temp &"
-sleep 8
+su - zhangqianlong -c "cd $BENCH_PATH;mpirun -np 22 --report-bindings  -rf rank  ./$BENCH_NAME  &>$BENCH_NAME.out &"
+sleep 8 
 #get pid on processor 0
-PID0=`ps -aeF|grep graph500_reference_bfs|grep -v mpirun|grep -v grep|grep " 0 "|awk '{print $2}'`
+PID0=`ps -aeF|grep ${BENCH_NAME}|grep -v mpirun|grep -v grep|grep " 0 "|awk '{print $2}'`
 echo "processID on processor 0 is $PID0"
 cat /proc/$PID0/numa_maps > maps_before_migrate
 
@@ -83,7 +88,7 @@ echo 0 >tracing_on
 
 
 echo "Copy trace to $BENCH_PATH/Overhead/"
-cp $SYS_TRACE_PATH/trace $BENCH_PATH/Overhead/
+cp $SYS_TRACE_PATH/trace $BENCH_PATH/Overhead/$BENCH_NAME.trace
 
 
 
