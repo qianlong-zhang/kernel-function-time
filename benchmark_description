@@ -1,0 +1,26 @@
+Workloads from Parsec use pthread while all others use OpenMP for multi-threading
+
+graph500:
+	graph500: 761MB
+		mpirun -np 22 ./graph500_reference_bfs 21 11  :192*(2^21)=768MB
+hpcc-1.5.0:
+	gups(RandomAccess):2.0GB
+	stream:1.08GB
+~/MyPHD/Benchmarks/NPB3.3.1/NPB3.3-OMP:
+	cg:C:890MB
+	ft:B:1.26GB
+	is:C:1.03GB
+	mg:B:490MB
+	ua:C:483MB
+./hpc-benchmarks/parsec-3.0/pkgs/kernels/canneal: (pthread)
+	canneal:native:939MB
+hpc-benchmarks/parsec-3.0/pkgs/apps/freqmine:  (pthread)
+	freqmine:native:678MB
+hpc-benchmarks:
+	lulesh2.0.3:696MB
+	miniFE-2.0:642MB
+XSBench:
+	XSBench:large:5.55GB
+
+
+
