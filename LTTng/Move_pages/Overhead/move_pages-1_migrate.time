@@ -1,5 +1,0 @@
-+ numactl --physcpubind=2 ./move_pages
-
-real	0m0.068s
-user	0m0.004s
-sys	0m0.064s
