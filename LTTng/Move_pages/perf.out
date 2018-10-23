@@ -1,0 +1,1931 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 137  of event 'cycles:ppp'
+# Event count (approx.): 71944614
+#
+# Children      Self  Command     Shared Object      Symbol                                        
+# ........  ........  ..........  .................  ..............................................
+#
+    80.71%     0.00%  move_pages  [unknown]          [.] 0x0f8e258d4c544155
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               |          
+               |--44.30%--0x7f66f878d4d9
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          sys_move_pages
+               |          SYSC_move_pages
+               |          |          
+               |           --43.06%--migrate_pages
+               |                     |          
+               |                     |--21.69%--move_to_new_page
+               |                     |          migrate_page
+               |                     |          |          
+               |                     |          |--14.51%--copy_page
+               |                     |          |          
+               |                     |           --7.18%--migrate_page_copy
+               |                     |                     migrate_page_states
+               |                     |          
+               |                     |--5.82%--try_to_unmap
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |          |--4.70%--try_to_unmap_one
+               |                     |          |          |          
+               |                     |          |          |--2.44%--ptep_clear_flush
+               |                     |          |          |          flush_tlb_mm_range
+               |                     |          |          |          flush_tlb_func_common.constprop.11
+               |                     |          |          |          |          
+               |                     |          |          |           --1.22%--native_flush_tlb_one_user
+               |                     |          |          |          
+               |                     |          |           --1.13%--page_vma_mapped_walk
+               |                     |          |                     _raw_spin_lock
+               |                     |          |          
+               |                     |           --1.12%--page_mapcount_is_zero
+               |                     |                     total_mapcount
+               |                     |          
+               |                     |--4.82%--__put_page
+               |                     |          |          
+               |                     |          |--3.58%--free_unref_page
+               |                     |          |          |          
+               |                     |          |          |--2.38%--free_unref_page_commit
+               |                     |          |          |          free_pcppages_bulk
+               |                     |          |          |          
+               |                     |          |           --1.21%--free_unref_page_prepare.part.64
+               |                     |          |          
+               |                     |           --1.24%--__page_cache_release
+               |                     |                     mem_cgroup_uncharge
+               |                     |                     uncharge_batch
+               |                     |          
+               |                     |--4.77%--new_page_node
+               |                     |          |          
+               |                     |           --3.53%--__alloc_pages_nodemask
+               |                     |                     |          
+               |                     |                      --2.33%--get_page_from_freelist
+               |                     |                                |          
+               |                     |                                 --1.11%--__inc_numa_state
+               |                     |          
+               |                     |--2.39%--remove_migration_ptes
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |           --1.17%--remove_migration_pte
+               |                     |                     page_vma_mapped_walk
+               |                     |          
+               |                      --1.16%--putback_lru_page
+               |                                lru_cache_add
+               |                                __lru_cache_add
+               |                                __indirect_thunk_start
+               |          
+               |--29.35%--0x400c61
+               |          |          
+               |          |--16.16%--page_fault
+               |          |          do_page_fault
+               |          |          __do_page_fault
+               |          |          |          
+               |          |           --15.82%--handle_mm_fault
+               |          |                     |          
+               |          |                      --15.48%--__handle_mm_fault
+               |          |                                handle_pte_fault
+               |          |                                |          
+               |          |                                |--6.05%--alloc_pages_vma
+               |          |                                |          |          
+               |          |                                |           --4.98%--__alloc_pages_nodemask
+               |          |                                |                     |          
+               |          |                                |                     |--2.32%--clear_page_erms
+               |          |                                |                     |          
+               |          |                                |                      --2.32%--get_page_from_freelist
+               |          |                                |          
+               |          |                                |--4.09%--mem_cgroup_try_charge
+               |          |                                |          |          
+               |          |                                |           --3.77%--try_charge
+               |          |                                |          
+               |          |                                |--2.49%--_raw_spin_lock
+               |          |                                |          
+               |          |                                |--1.17%--page_add_new_anon_rmap
+               |          |                                |          
+               |          |                                 --0.68%--lru_cache_add_active_or_unevictable
+               |          |          
+               |          |--4.89%--error_entry
+               |          |          |          
+               |          |           --2.04%--sync_regs
+               |          |          
+               |          |--1.02%--native_irq_return_iret
+               |          |          
+               |           --0.68%--swapgs_restore_regs_and_return_to_usermode
+               |          
+               |--4.87%--0x400df5
+               |          
+               |--1.19%--0x400d02
+               |          
+                --1.01%--0x400c70
+
+    80.71%     0.00%  move_pages  libc-2.23.so       [.] 0x00007f66f86ac830
+            |
+            ---0x7f66f86ac830
+               |          
+               |--44.30%--0x7f66f878d4d9
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          sys_move_pages
+               |          SYSC_move_pages
+               |          |          
+               |           --43.06%--migrate_pages
+               |                     |          
+               |                     |--21.69%--move_to_new_page
+               |                     |          migrate_page
+               |                     |          |          
+               |                     |          |--14.51%--copy_page
+               |                     |          |          
+               |                     |           --7.18%--migrate_page_copy
+               |                     |                     migrate_page_states
+               |                     |          
+               |                     |--5.82%--try_to_unmap
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |          |--4.70%--try_to_unmap_one
+               |                     |          |          |          
+               |                     |          |          |--2.44%--ptep_clear_flush
+               |                     |          |          |          flush_tlb_mm_range
+               |                     |          |          |          flush_tlb_func_common.constprop.11
+               |                     |          |          |          |          
+               |                     |          |          |           --1.22%--native_flush_tlb_one_user
+               |                     |          |          |          
+               |                     |          |           --1.13%--page_vma_mapped_walk
+               |                     |          |                     _raw_spin_lock
+               |                     |          |          
+               |                     |           --1.12%--page_mapcount_is_zero
+               |                     |                     total_mapcount
+               |                     |          
+               |                     |--4.82%--__put_page
+               |                     |          |          
+               |                     |          |--3.58%--free_unref_page
+               |                     |          |          |          
+               |                     |          |          |--2.38%--free_unref_page_commit
+               |                     |          |          |          free_pcppages_bulk
+               |                     |          |          |          
+               |                     |          |           --1.21%--free_unref_page_prepare.part.64
+               |                     |          |          
+               |                     |           --1.24%--__page_cache_release
+               |                     |                     mem_cgroup_uncharge
+               |                     |                     uncharge_batch
+               |                     |          
+               |                     |--4.77%--new_page_node
+               |                     |          |          
+               |                     |           --3.53%--__alloc_pages_nodemask
+               |                     |                     |          
+               |                     |                      --2.33%--get_page_from_freelist
+               |                     |                                |          
+               |                     |                                 --1.11%--__inc_numa_state
+               |                     |          
+               |                     |--2.39%--remove_migration_ptes
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |           --1.17%--remove_migration_pte
+               |                     |                     page_vma_mapped_walk
+               |                     |          
+               |                      --1.16%--putback_lru_page
+               |                                lru_cache_add
+               |                                __lru_cache_add
+               |                                __indirect_thunk_start
+               |          
+               |--29.35%--0x400c61
+               |          |          
+               |          |--16.16%--page_fault
+               |          |          do_page_fault
+               |          |          __do_page_fault
+               |          |          |          
+               |          |           --15.82%--handle_mm_fault
+               |          |                     |          
+               |          |                      --15.48%--__handle_mm_fault
+               |          |                                handle_pte_fault
+               |          |                                |          
+               |          |                                |--6.05%--alloc_pages_vma
+               |          |                                |          |          
+               |          |                                |           --4.98%--__alloc_pages_nodemask
+               |          |                                |                     |          
+               |          |                                |                     |--2.32%--clear_page_erms
+               |          |                                |                     |          
+               |          |                                |                      --2.32%--get_page_from_freelist
+               |          |                                |          
+               |          |                                |--4.09%--mem_cgroup_try_charge
+               |          |                                |          |          
+               |          |                                |           --3.77%--try_charge
+               |          |                                |          
+               |          |                                |--2.49%--_raw_spin_lock
+               |          |                                |          
+               |          |                                |--1.17%--page_add_new_anon_rmap
+               |          |                                |          
+               |          |                                 --0.68%--lru_cache_add_active_or_unevictable
+               |          |          
+               |          |--4.89%--error_entry
+               |          |          |          
+               |          |           --2.04%--sync_regs
+               |          |          
+               |          |--1.02%--native_irq_return_iret
+               |          |          
+               |           --0.68%--swapgs_restore_regs_and_return_to_usermode
+               |          
+               |--4.87%--0x400df5
+               |          
+               |--1.19%--0x400d02
+               |          
+                --1.01%--0x400c70
+
+    62.43%     0.00%  move_pages  [kernel.kallsyms]  [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+               |--44.30%--sys_move_pages
+               |          SYSC_move_pages
+               |          |          
+               |           --43.06%--migrate_pages
+               |                     |          
+               |                     |--21.69%--move_to_new_page
+               |                     |          migrate_page
+               |                     |          |          
+               |                     |          |--14.51%--copy_page
+               |                     |          |          
+               |                     |           --7.18%--migrate_page_copy
+               |                     |                     migrate_page_states
+               |                     |          
+               |                     |--5.82%--try_to_unmap
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |          |--4.70%--try_to_unmap_one
+               |                     |          |          |          
+               |                     |          |          |--2.44%--ptep_clear_flush
+               |                     |          |          |          flush_tlb_mm_range
+               |                     |          |          |          flush_tlb_func_common.constprop.11
+               |                     |          |          |          |          
+               |                     |          |          |           --1.22%--native_flush_tlb_one_user
+               |                     |          |          |          
+               |                     |          |           --1.13%--page_vma_mapped_walk
+               |                     |          |                     _raw_spin_lock
+               |                     |          |          
+               |                     |           --1.12%--page_mapcount_is_zero
+               |                     |                     total_mapcount
+               |                     |          
+               |                     |--4.82%--__put_page
+               |                     |          |          
+               |                     |          |--3.58%--free_unref_page
+               |                     |          |          |          
+               |                     |          |          |--2.38%--free_unref_page_commit
+               |                     |          |          |          free_pcppages_bulk
+               |                     |          |          |          
+               |                     |          |           --1.21%--free_unref_page_prepare.part.64
+               |                     |          |          
+               |                     |           --1.24%--__page_cache_release
+               |                     |                     mem_cgroup_uncharge
+               |                     |                     uncharge_batch
+               |                     |          
+               |                     |--4.77%--new_page_node
+               |                     |          |          
+               |                     |           --3.53%--__alloc_pages_nodemask
+               |                     |                     |          
+               |                     |                      --2.33%--get_page_from_freelist
+               |                     |                                |          
+               |                     |                                 --1.11%--__inc_numa_state
+               |                     |          
+               |                     |--2.39%--remove_migration_ptes
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |           --1.17%--remove_migration_pte
+               |                     |                     page_vma_mapped_walk
+               |                     |          
+               |                      --1.16%--putback_lru_page
+               |                                lru_cache_add
+               |                                __lru_cache_add
+               |                                __indirect_thunk_start
+               |          
+               |--14.39%--sys_migrate_pages
+               |          SYSC_migrate_pages
+               |          do_migrate_pages.part.31
+               |          migrate_to_node
+               |          queue_pages_range
+               |          walk_page_range
+               |          __walk_page_range
+               |          queue_pages_pte_range
+               |          |          
+               |           --2.42%--_vm_normal_page
+               |          
+                --2.44%--sys_exit_group
+                          do_group_exit
+                          do_exit
+                          mmput
+                          exit_mmap
+                          tlb_finish_mmu
+                          arch_tlb_finish_mmu
+                          tlb_flush_mmu_free
+                          free_pages_and_swap_cache
+                          release_pages
+                          |          
+                           --1.21%--free_unref_page_list
+                                     free_unref_page_commit
+                                     __mod_zone_page_state
+
+    62.43%     0.00%  move_pages  [kernel.kallsyms]  [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+               |--44.30%--sys_move_pages
+               |          SYSC_move_pages
+               |          |          
+               |           --43.06%--migrate_pages
+               |                     |          
+               |                     |--21.69%--move_to_new_page
+               |                     |          migrate_page
+               |                     |          |          
+               |                     |          |--14.51%--copy_page
+               |                     |          |          
+               |                     |           --7.18%--migrate_page_copy
+               |                     |                     migrate_page_states
+               |                     |          
+               |                     |--5.82%--try_to_unmap
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |          |--4.70%--try_to_unmap_one
+               |                     |          |          |          
+               |                     |          |          |--2.44%--ptep_clear_flush
+               |                     |          |          |          flush_tlb_mm_range
+               |                     |          |          |          flush_tlb_func_common.constprop.11
+               |                     |          |          |          |          
+               |                     |          |          |           --1.22%--native_flush_tlb_one_user
+               |                     |          |          |          
+               |                     |          |           --1.13%--page_vma_mapped_walk
+               |                     |          |                     _raw_spin_lock
+               |                     |          |          
+               |                     |           --1.12%--page_mapcount_is_zero
+               |                     |                     total_mapcount
+               |                     |          
+               |                     |--4.82%--__put_page
+               |                     |          |          
+               |                     |          |--3.58%--free_unref_page
+               |                     |          |          |          
+               |                     |          |          |--2.38%--free_unref_page_commit
+               |                     |          |          |          free_pcppages_bulk
+               |                     |          |          |          
+               |                     |          |           --1.21%--free_unref_page_prepare.part.64
+               |                     |          |          
+               |                     |           --1.24%--__page_cache_release
+               |                     |                     mem_cgroup_uncharge
+               |                     |                     uncharge_batch
+               |                     |          
+               |                     |--4.77%--new_page_node
+               |                     |          |          
+               |                     |           --3.53%--__alloc_pages_nodemask
+               |                     |                     |          
+               |                     |                      --2.33%--get_page_from_freelist
+               |                     |                                |          
+               |                     |                                 --1.11%--__inc_numa_state
+               |                     |          
+               |                     |--2.39%--remove_migration_ptes
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |           --1.17%--remove_migration_pte
+               |                     |                     page_vma_mapped_walk
+               |                     |          
+               |                      --1.16%--putback_lru_page
+               |                                lru_cache_add
+               |                                __lru_cache_add
+               |                                __indirect_thunk_start
+               |          
+               |--14.39%--sys_migrate_pages
+               |          SYSC_migrate_pages
+               |          do_migrate_pages.part.31
+               |          migrate_to_node
+               |          queue_pages_range
+               |          walk_page_range
+               |          __walk_page_range
+               |          queue_pages_pte_range
+               |          |          
+               |           --2.42%--_vm_normal_page
+               |          
+                --2.44%--sys_exit_group
+                          do_group_exit
+                          do_exit
+                          mmput
+                          exit_mmap
+                          tlb_finish_mmu
+                          arch_tlb_finish_mmu
+                          tlb_flush_mmu_free
+                          free_pages_and_swap_cache
+                          release_pages
+                          |          
+                           --1.21%--free_unref_page_list
+                                     free_unref_page_commit
+                                     __mod_zone_page_state
+
+    58.99%     0.00%  move_pages  libc-2.23.so       [.] 0x00007f66f878d4d9
+            |
+            ---0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+               |--44.30%--sys_move_pages
+               |          SYSC_move_pages
+               |          |          
+               |           --43.06%--migrate_pages
+               |                     |          
+               |                     |--21.69%--move_to_new_page
+               |                     |          migrate_page
+               |                     |          |          
+               |                     |          |--14.51%--copy_page
+               |                     |          |          
+               |                     |           --7.18%--migrate_page_copy
+               |                     |                     migrate_page_states
+               |                     |          
+               |                     |--5.82%--try_to_unmap
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |          |--4.70%--try_to_unmap_one
+               |                     |          |          |          
+               |                     |          |          |--2.44%--ptep_clear_flush
+               |                     |          |          |          flush_tlb_mm_range
+               |                     |          |          |          flush_tlb_func_common.constprop.11
+               |                     |          |          |          |          
+               |                     |          |          |           --1.22%--native_flush_tlb_one_user
+               |                     |          |          |          
+               |                     |          |           --1.13%--page_vma_mapped_walk
+               |                     |          |                     _raw_spin_lock
+               |                     |          |          
+               |                     |           --1.12%--page_mapcount_is_zero
+               |                     |                     total_mapcount
+               |                     |          
+               |                     |--4.82%--__put_page
+               |                     |          |          
+               |                     |          |--3.58%--free_unref_page
+               |                     |          |          |          
+               |                     |          |          |--2.38%--free_unref_page_commit
+               |                     |          |          |          free_pcppages_bulk
+               |                     |          |          |          
+               |                     |          |           --1.21%--free_unref_page_prepare.part.64
+               |                     |          |          
+               |                     |           --1.24%--__page_cache_release
+               |                     |                     mem_cgroup_uncharge
+               |                     |                     uncharge_batch
+               |                     |          
+               |                     |--4.77%--new_page_node
+               |                     |          |          
+               |                     |           --3.53%--__alloc_pages_nodemask
+               |                     |                     |          
+               |                     |                      --2.33%--get_page_from_freelist
+               |                     |                                |          
+               |                     |                                 --1.11%--__inc_numa_state
+               |                     |          
+               |                     |--2.39%--remove_migration_ptes
+               |                     |          rmap_walk
+               |                     |          rmap_walk_anon
+               |                     |          |          
+               |                     |           --1.17%--remove_migration_pte
+               |                     |                     page_vma_mapped_walk
+               |                     |          
+               |                      --1.16%--putback_lru_page
+               |                                lru_cache_add
+               |                                __lru_cache_add
+               |                                __indirect_thunk_start
+               |          
+                --14.39%--sys_migrate_pages
+                          SYSC_migrate_pages
+                          do_migrate_pages.part.31
+                          migrate_to_node
+                          queue_pages_range
+                          walk_page_range
+                          __walk_page_range
+                          queue_pages_pte_range
+                          |          
+                           --2.42%--_vm_normal_page
+
+    44.30%     0.00%  move_pages  [kernel.kallsyms]  [k] sys_move_pages
+            |
+            ---sys_move_pages
+               SYSC_move_pages
+               |          
+                --43.06%--migrate_pages
+                          |          
+                          |--21.69%--move_to_new_page
+                          |          migrate_page
+                          |          |          
+                          |          |--14.51%--copy_page
+                          |          |          
+                          |           --7.18%--migrate_page_copy
+                          |                     migrate_page_states
+                          |          
+                          |--5.82%--try_to_unmap
+                          |          rmap_walk
+                          |          rmap_walk_anon
+                          |          |          
+                          |          |--4.70%--try_to_unmap_one
+                          |          |          |          
+                          |          |          |--2.44%--ptep_clear_flush
+                          |          |          |          flush_tlb_mm_range
+                          |          |          |          flush_tlb_func_common.constprop.11
+                          |          |          |          |          
+                          |          |          |           --1.22%--native_flush_tlb_one_user
+                          |          |          |          
+                          |          |           --1.13%--page_vma_mapped_walk
+                          |          |                     _raw_spin_lock
+                          |          |          
+                          |           --1.12%--page_mapcount_is_zero
+                          |                     total_mapcount
+                          |          
+                          |--4.82%--__put_page
+                          |          |          
+                          |          |--3.58%--free_unref_page
+                          |          |          |          
+                          |          |          |--2.38%--free_unref_page_commit
+                          |          |          |          free_pcppages_bulk
+                          |          |          |          
+                          |          |           --1.21%--free_unref_page_prepare.part.64
+                          |          |          
+                          |           --1.24%--__page_cache_release
+                          |                     mem_cgroup_uncharge
+                          |                     uncharge_batch
+                          |          
+                          |--4.77%--new_page_node
+                          |          |          
+                          |           --3.53%--__alloc_pages_nodemask
+                          |                     |          
+                          |                      --2.33%--get_page_from_freelist
+                          |                                |          
+                          |                                 --1.11%--__inc_numa_state
+                          |          
+                          |--2.39%--remove_migration_ptes
+                          |          rmap_walk
+                          |          rmap_walk_anon
+                          |          |          
+                          |           --1.17%--remove_migration_pte
+                          |                     page_vma_mapped_walk
+                          |          
+                           --1.16%--putback_lru_page
+                                     lru_cache_add
+                                     __lru_cache_add
+                                     __indirect_thunk_start
+
+    44.30%     1.23%  move_pages  [kernel.kallsyms]  [k] SYSC_move_pages
+            |          
+            |--43.06%--SYSC_move_pages
+            |          migrate_pages
+            |          |          
+            |          |--21.69%--move_to_new_page
+            |          |          migrate_page
+            |          |          |          
+            |          |          |--14.51%--copy_page
+            |          |          |          
+            |          |           --7.18%--migrate_page_copy
+            |          |                     migrate_page_states
+            |          |          
+            |          |--5.82%--try_to_unmap
+            |          |          rmap_walk
+            |          |          rmap_walk_anon
+            |          |          |          
+            |          |          |--4.70%--try_to_unmap_one
+            |          |          |          |          
+            |          |          |          |--2.44%--ptep_clear_flush
+            |          |          |          |          flush_tlb_mm_range
+            |          |          |          |          flush_tlb_func_common.constprop.11
+            |          |          |          |          |          
+            |          |          |          |           --1.22%--native_flush_tlb_one_user
+            |          |          |          |          
+            |          |          |           --1.13%--page_vma_mapped_walk
+            |          |          |                     _raw_spin_lock
+            |          |          |          
+            |          |           --1.12%--page_mapcount_is_zero
+            |          |                     total_mapcount
+            |          |          
+            |          |--4.82%--__put_page
+            |          |          |          
+            |          |          |--3.58%--free_unref_page
+            |          |          |          |          
+            |          |          |          |--2.38%--free_unref_page_commit
+            |          |          |          |          free_pcppages_bulk
+            |          |          |          |          
+            |          |          |           --1.21%--free_unref_page_prepare.part.64
+            |          |          |          
+            |          |           --1.24%--__page_cache_release
+            |          |                     mem_cgroup_uncharge
+            |          |                     uncharge_batch
+            |          |          
+            |          |--4.77%--new_page_node
+            |          |          |          
+            |          |           --3.53%--__alloc_pages_nodemask
+            |          |                     |          
+            |          |                      --2.33%--get_page_from_freelist
+            |          |                                |          
+            |          |                                 --1.11%--__inc_numa_state
+            |          |          
+            |          |--2.39%--remove_migration_ptes
+            |          |          rmap_walk
+            |          |          rmap_walk_anon
+            |          |          |          
+            |          |           --1.17%--remove_migration_pte
+            |          |                     page_vma_mapped_walk
+            |          |          
+            |           --1.16%--putback_lru_page
+            |                     lru_cache_add
+            |                     __lru_cache_add
+            |                     __indirect_thunk_start
+            |          
+             --1.23%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x7f66f878d4d9
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_move_pages
+                       SYSC_move_pages
+
+    43.06%     2.41%  move_pages  [kernel.kallsyms]  [k] migrate_pages
+            |          
+            |--40.65%--migrate_pages
+            |          |          
+            |          |--21.69%--move_to_new_page
+            |          |          migrate_page
+            |          |          |          
+            |          |          |--14.51%--copy_page
+            |          |          |          
+            |          |           --7.18%--migrate_page_copy
+            |          |                     migrate_page_states
+            |          |          
+            |          |--5.82%--try_to_unmap
+            |          |          rmap_walk
+            |          |          rmap_walk_anon
+            |          |          |          
+            |          |          |--4.70%--try_to_unmap_one
+            |          |          |          |          
+            |          |          |          |--2.44%--ptep_clear_flush
+            |          |          |          |          flush_tlb_mm_range
+            |          |          |          |          flush_tlb_func_common.constprop.11
+            |          |          |          |          |          
+            |          |          |          |           --1.22%--native_flush_tlb_one_user
+            |          |          |          |          
+            |          |          |           --1.13%--page_vma_mapped_walk
+            |          |          |                     _raw_spin_lock
+            |          |          |          
+            |          |           --1.12%--page_mapcount_is_zero
+            |          |                     total_mapcount
+            |          |          
+            |          |--4.82%--__put_page
+            |          |          |          
+            |          |          |--3.58%--free_unref_page
+            |          |          |          |          
+            |          |          |          |--2.38%--free_unref_page_commit
+            |          |          |          |          free_pcppages_bulk
+            |          |          |          |          
+            |          |          |           --1.21%--free_unref_page_prepare.part.64
+            |          |          |          
+            |          |           --1.24%--__page_cache_release
+            |          |                     mem_cgroup_uncharge
+            |          |                     uncharge_batch
+            |          |          
+            |          |--4.77%--new_page_node
+            |          |          |          
+            |          |           --3.53%--__alloc_pages_nodemask
+            |          |                     |          
+            |          |                      --2.33%--get_page_from_freelist
+            |          |                                |          
+            |          |                                 --1.11%--__inc_numa_state
+            |          |          
+            |          |--2.39%--remove_migration_ptes
+            |          |          rmap_walk
+            |          |          rmap_walk_anon
+            |          |          |          
+            |          |           --1.17%--remove_migration_pte
+            |          |                     page_vma_mapped_walk
+            |          |          
+            |           --1.16%--putback_lru_page
+            |                     lru_cache_add
+            |                     __lru_cache_add
+            |                     __indirect_thunk_start
+            |          
+             --2.41%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x7f66f878d4d9
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_move_pages
+                       SYSC_move_pages
+                       migrate_pages
+
+    29.35%     0.00%  move_pages  move_pages         [.] 0x0000000000400c61
+            |
+            ---0x400c61
+               |          
+               |--16.16%--page_fault
+               |          do_page_fault
+               |          __do_page_fault
+               |          |          
+               |           --15.82%--handle_mm_fault
+               |                     |          
+               |                      --15.48%--__handle_mm_fault
+               |                                handle_pte_fault
+               |                                |          
+               |                                |--6.05%--alloc_pages_vma
+               |                                |          |          
+               |                                |           --4.98%--__alloc_pages_nodemask
+               |                                |                     |          
+               |                                |                     |--2.32%--clear_page_erms
+               |                                |                     |          
+               |                                |                      --2.32%--get_page_from_freelist
+               |                                |          
+               |                                |--4.09%--mem_cgroup_try_charge
+               |                                |          |          
+               |                                |           --3.77%--try_charge
+               |                                |          
+               |                                |--2.49%--_raw_spin_lock
+               |                                |          
+               |                                |--1.17%--page_add_new_anon_rmap
+               |                                |          
+               |                                 --0.68%--lru_cache_add_active_or_unevictable
+               |          
+               |--4.89%--error_entry
+               |          |          
+               |           --2.04%--sync_regs
+               |          
+               |--1.02%--native_irq_return_iret
+               |          
+                --0.68%--swapgs_restore_regs_and_return_to_usermode
+
+    21.69%     0.00%  move_pages  [kernel.kallsyms]  [k] move_to_new_page
+            |
+            ---move_to_new_page
+               migrate_page
+               |          
+               |--14.51%--copy_page
+               |          
+                --7.18%--migrate_page_copy
+                          migrate_page_states
+
+    21.69%     0.00%  move_pages  [kernel.kallsyms]  [k] migrate_page
+            |
+            ---migrate_page
+               |          
+               |--14.51%--copy_page
+               |          
+                --7.18%--migrate_page_copy
+                          migrate_page_states
+
+    16.97%     0.00%  move_pages  [kernel.kallsyms]  [k] page_fault
+            |
+            ---page_fault
+               do_page_fault
+               __do_page_fault
+               |          
+                --16.63%--handle_mm_fault
+                          |          
+                           --16.29%--__handle_mm_fault
+                                     |          
+                                      --16.02%--handle_pte_fault
+                                                |          
+                                                |--6.05%--alloc_pages_vma
+                                                |          |          
+                                                |           --4.98%--__alloc_pages_nodemask
+                                                |                     |          
+                                                |                     |--2.32%--clear_page_erms
+                                                |                     |          
+                                                |                      --2.32%--get_page_from_freelist
+                                                |          
+                                                |--4.09%--mem_cgroup_try_charge
+                                                |          |          
+                                                |           --3.77%--try_charge
+                                                |          
+                                                |--2.49%--_raw_spin_lock
+                                                |          
+                                                |--1.17%--page_add_new_anon_rmap
+                                                |          
+                                                |--0.68%--lru_cache_add_active_or_unevictable
+                                                |          
+                                                 --0.54%--filemap_map_pages
+
+    16.97%     0.00%  move_pages  [kernel.kallsyms]  [k] do_page_fault
+            |
+            ---do_page_fault
+               __do_page_fault
+               |          
+                --16.63%--handle_mm_fault
+                          |          
+                           --16.29%--__handle_mm_fault
+                                     |          
+                                      --16.02%--handle_pte_fault
+                                                |          
+                                                |--6.05%--alloc_pages_vma
+                                                |          |          
+                                                |           --4.98%--__alloc_pages_nodemask
+                                                |                     |          
+                                                |                     |--2.32%--clear_page_erms
+                                                |                     |          
+                                                |                      --2.32%--get_page_from_freelist
+                                                |          
+                                                |--4.09%--mem_cgroup_try_charge
+                                                |          |          
+                                                |           --3.77%--try_charge
+                                                |          
+                                                |--2.49%--_raw_spin_lock
+                                                |          
+                                                |--1.17%--page_add_new_anon_rmap
+                                                |          
+                                                |--0.68%--lru_cache_add_active_or_unevictable
+                                                |          
+                                                 --0.54%--filemap_map_pages
+
+    16.97%     0.34%  move_pages  [kernel.kallsyms]  [k] __do_page_fault
+            |          
+             --16.63%--__do_page_fault
+                       handle_mm_fault
+                       |          
+                        --16.29%--__handle_mm_fault
+                                  |          
+                                   --16.02%--handle_pte_fault
+                                             |          
+                                             |--6.05%--alloc_pages_vma
+                                             |          |          
+                                             |           --4.98%--__alloc_pages_nodemask
+                                             |                     |          
+                                             |                     |--2.32%--clear_page_erms
+                                             |                     |          
+                                             |                      --2.32%--get_page_from_freelist
+                                             |          
+                                             |--4.09%--mem_cgroup_try_charge
+                                             |          |          
+                                             |           --3.77%--try_charge
+                                             |          
+                                             |--2.49%--_raw_spin_lock
+                                             |          
+                                             |--1.17%--page_add_new_anon_rmap
+                                             |          
+                                             |--0.68%--lru_cache_add_active_or_unevictable
+                                             |          
+                                              --0.54%--filemap_map_pages
+
+    16.63%     0.34%  move_pages  [kernel.kallsyms]  [k] handle_mm_fault
+            |          
+             --16.29%--handle_mm_fault
+                       __handle_mm_fault
+                       |          
+                        --16.02%--handle_pte_fault
+                                  |          
+                                  |--6.05%--alloc_pages_vma
+                                  |          |          
+                                  |           --4.98%--__alloc_pages_nodemask
+                                  |                     |          
+                                  |                     |--2.32%--clear_page_erms
+                                  |                     |          
+                                  |                      --2.32%--get_page_from_freelist
+                                  |          
+                                  |--4.09%--mem_cgroup_try_charge
+                                  |          |          
+                                  |           --3.77%--try_charge
+                                  |          
+                                  |--2.49%--_raw_spin_lock
+                                  |          
+                                  |--1.17%--page_add_new_anon_rmap
+                                  |          
+                                  |--0.68%--lru_cache_add_active_or_unevictable
+                                  |          
+                                   --0.54%--filemap_map_pages
+
+    16.29%     0.00%  move_pages  [kernel.kallsyms]  [k] __handle_mm_fault
+            |
+            ---__handle_mm_fault
+               |          
+                --16.02%--handle_pte_fault
+                          |          
+                          |--6.05%--alloc_pages_vma
+                          |          |          
+                          |           --4.98%--__alloc_pages_nodemask
+                          |                     |          
+                          |                     |--2.32%--clear_page_erms
+                          |                     |          
+                          |                      --2.32%--get_page_from_freelist
+                          |          
+                          |--4.09%--mem_cgroup_try_charge
+                          |          |          
+                          |           --3.77%--try_charge
+                          |          
+                          |--2.49%--_raw_spin_lock
+                          |          
+                          |--1.17%--page_add_new_anon_rmap
+                          |          
+                          |--0.68%--lru_cache_add_active_or_unevictable
+                          |          
+                           --0.54%--filemap_map_pages
+
+    16.02%     1.01%  move_pages  [kernel.kallsyms]  [k] handle_pte_fault
+            |          
+            |--15.01%--handle_pte_fault
+            |          |          
+            |          |--6.05%--alloc_pages_vma
+            |          |          |          
+            |          |           --4.98%--__alloc_pages_nodemask
+            |          |                     |          
+            |          |                     |--2.32%--clear_page_erms
+            |          |                     |          
+            |          |                      --2.32%--get_page_from_freelist
+            |          |          
+            |          |--4.09%--mem_cgroup_try_charge
+            |          |          |          
+            |          |           --3.77%--try_charge
+            |          |          
+            |          |--2.49%--_raw_spin_lock
+            |          |          
+            |          |--1.17%--page_add_new_anon_rmap
+            |          |          
+            |          |--0.68%--lru_cache_add_active_or_unevictable
+            |          |          
+            |           --0.54%--filemap_map_pages
+            |          
+             --1.01%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x400c61
+                       page_fault
+                       do_page_fault
+                       __do_page_fault
+                       handle_mm_fault
+                       __handle_mm_fault
+                       handle_pte_fault
+
+    14.78%    14.78%  move_pages  [kernel.kallsyms]  [k] copy_page
+            |          
+             --14.51%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x7f66f878d4d9
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_move_pages
+                       SYSC_move_pages
+                       migrate_pages
+                       move_to_new_page
+                       migrate_page
+                       copy_page
+
+    14.69%     0.00%  move_pages  [kernel.kallsyms]  [k] queue_pages_range
+            |
+            ---queue_pages_range
+               walk_page_range
+               |          
+                --14.39%--__walk_page_range
+                          queue_pages_pte_range
+                          |          
+                           --2.42%--_vm_normal_page
+
+    14.69%     0.00%  move_pages  [kernel.kallsyms]  [k] walk_page_range
+            |
+            ---walk_page_range
+               |          
+                --14.39%--__walk_page_range
+                          queue_pages_pte_range
+                          |          
+                           --2.42%--_vm_normal_page
+
+    14.39%     0.00%  move_pages  [unknown]          [k] 0x0000000000c813e0
+            |
+            ---0xc813e0
+               0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_migrate_pages
+               SYSC_migrate_pages
+               do_migrate_pages.part.31
+               migrate_to_node
+               queue_pages_range
+               walk_page_range
+               __walk_page_range
+               queue_pages_pte_range
+               |          
+                --2.42%--_vm_normal_page
+
+    14.39%    11.96%  move_pages  [kernel.kallsyms]  [k] queue_pages_pte_range
+            |          
+            |--11.96%--0xc813e0
+            |          0x7f66f878d4d9
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          sys_migrate_pages
+            |          SYSC_migrate_pages
+            |          do_migrate_pages.part.31
+            |          migrate_to_node
+            |          queue_pages_range
+            |          walk_page_range
+            |          __walk_page_range
+            |          queue_pages_pte_range
+            |          
+             --2.42%--queue_pages_pte_range
+                       _vm_normal_page
+
+    14.39%     0.00%  move_pages  [kernel.kallsyms]  [k] sys_migrate_pages
+            |
+            ---sys_migrate_pages
+               SYSC_migrate_pages
+               do_migrate_pages.part.31
+               migrate_to_node
+               queue_pages_range
+               walk_page_range
+               __walk_page_range
+               queue_pages_pte_range
+               |          
+                --2.42%--_vm_normal_page
+
+    14.39%     0.00%  move_pages  [kernel.kallsyms]  [k] SYSC_migrate_pages
+            |
+            ---SYSC_migrate_pages
+               do_migrate_pages.part.31
+               migrate_to_node
+               queue_pages_range
+               walk_page_range
+               __walk_page_range
+               queue_pages_pte_range
+               |          
+                --2.42%--_vm_normal_page
+
+    14.39%     0.00%  move_pages  [kernel.kallsyms]  [k] do_migrate_pages.part.31
+            |
+            ---do_migrate_pages.part.31
+               migrate_to_node
+               queue_pages_range
+               walk_page_range
+               __walk_page_range
+               queue_pages_pte_range
+               |          
+                --2.42%--_vm_normal_page
+
+    14.39%     0.00%  move_pages  [kernel.kallsyms]  [k] migrate_to_node
+            |
+            ---migrate_to_node
+               queue_pages_range
+               walk_page_range
+               __walk_page_range
+               queue_pages_pte_range
+               |          
+                --2.42%--_vm_normal_page
+
+    14.39%     0.00%  move_pages  [kernel.kallsyms]  [k] __walk_page_range
+            |
+            ---__walk_page_range
+               queue_pages_pte_range
+               |          
+                --2.42%--_vm_normal_page
+
+     8.51%     1.54%  move_pages  [kernel.kallsyms]  [k] __alloc_pages_nodemask
+            |          
+            |--6.96%--__alloc_pages_nodemask
+            |          |          
+            |          |--4.65%--get_page_from_freelist
+            |          |          |          
+            |          |           --1.11%--__inc_numa_state
+            |          |          
+            |           --2.32%--clear_page_erms
+            |          
+             --1.54%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       |          
+                        --1.20%--0x7f66f878d4d9
+                                  entry_SYSCALL_64_after_hwframe
+                                  do_syscall_64
+                                  sys_move_pages
+                                  SYSC_move_pages
+                                  migrate_pages
+                                  new_page_node
+                                  __alloc_pages_nodemask
+
+     8.21%     1.22%  move_pages  [kernel.kallsyms]  [k] rmap_walk_anon
+            |          
+            |--6.99%--rmap_walk_anon
+            |          |          
+            |          |--4.70%--try_to_unmap_one
+            |          |          |          
+            |          |          |--2.44%--ptep_clear_flush
+            |          |          |          flush_tlb_mm_range
+            |          |          |          flush_tlb_func_common.constprop.11
+            |          |          |          |          
+            |          |          |           --1.22%--native_flush_tlb_one_user
+            |          |          |          
+            |          |           --1.13%--page_vma_mapped_walk
+            |          |                     _raw_spin_lock
+            |          |          
+            |          |--1.17%--remove_migration_pte
+            |          |          page_vma_mapped_walk
+            |          |          
+            |           --1.12%--page_mapcount_is_zero
+            |                     total_mapcount
+            |          
+             --1.22%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x7f66f878d4d9
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_move_pages
+                       SYSC_move_pages
+                       migrate_pages
+                       remove_migration_ptes
+                       rmap_walk
+                       rmap_walk_anon
+
+     8.21%     0.00%  move_pages  [kernel.kallsyms]  [k] rmap_walk
+            |
+            ---rmap_walk
+               rmap_walk_anon
+               |          
+               |--4.70%--try_to_unmap_one
+               |          |          
+               |          |--2.44%--ptep_clear_flush
+               |          |          flush_tlb_mm_range
+               |          |          flush_tlb_func_common.constprop.11
+               |          |          |          
+               |          |           --1.22%--native_flush_tlb_one_user
+               |          |          
+               |           --1.13%--page_vma_mapped_walk
+               |                     _raw_spin_lock
+               |          
+               |--1.17%--remove_migration_pte
+               |          page_vma_mapped_walk
+               |          
+                --1.12%--page_mapcount_is_zero
+                          total_mapcount
+
+     7.18%     7.18%  move_pages  [kernel.kallsyms]  [k] migrate_page_states
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_move_pages
+               SYSC_move_pages
+               migrate_pages
+               move_to_new_page
+               migrate_page
+               migrate_page_copy
+               migrate_page_states
+
+     7.18%     0.00%  move_pages  [kernel.kallsyms]  [k] migrate_page_copy
+            |
+            ---migrate_page_copy
+               migrate_page_states
+
+     6.60%     6.60%  move_pages  move_pages         [.] 0x0000000000000c61
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400c61
+
+     6.05%     1.07%  move_pages  [kernel.kallsyms]  [k] alloc_pages_vma
+            |          
+            |--4.98%--alloc_pages_vma
+            |          __alloc_pages_nodemask
+            |          |          
+            |          |--2.32%--clear_page_erms
+            |          |          
+            |           --2.32%--get_page_from_freelist
+            |          
+             --1.07%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x400c61
+                       page_fault
+                       do_page_fault
+                       __do_page_fault
+                       handle_mm_fault
+                       __handle_mm_fault
+                       handle_pte_fault
+                       alloc_pages_vma
+
+     5.82%     0.00%  move_pages  [kernel.kallsyms]  [k] try_to_unmap
+            |
+            ---try_to_unmap
+               rmap_walk
+               rmap_walk_anon
+               |          
+               |--4.70%--try_to_unmap_one
+               |          |          
+               |          |--2.44%--ptep_clear_flush
+               |          |          flush_tlb_mm_range
+               |          |          flush_tlb_func_common.constprop.11
+               |          |          |          
+               |          |           --1.22%--native_flush_tlb_one_user
+               |          |          
+               |           --1.13%--page_vma_mapped_walk
+               |                     _raw_spin_lock
+               |          
+                --1.12%--page_mapcount_is_zero
+                          total_mapcount
+
+     4.89%     2.85%  move_pages  [kernel.kallsyms]  [k] error_entry
+            |          
+            |--2.85%--0xf8e258d4c544155
+            |          0x7f66f86ac830
+            |          0x400c61
+            |          error_entry
+            |          
+             --2.04%--error_entry
+                       sync_regs
+
+     4.87%     4.87%  move_pages  move_pages         [.] 0x0000000000000df5
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400df5
+
+     4.87%     0.00%  move_pages  move_pages         [.] 0x0000000000400df5
+            |
+            ---0x400df5
+
+     4.82%     0.00%  move_pages  [kernel.kallsyms]  [k] __put_page
+            |
+            ---__put_page
+               |          
+               |--3.58%--free_unref_page
+               |          |          
+               |          |--2.38%--free_unref_page_commit
+               |          |          free_pcppages_bulk
+               |          |          
+               |           --1.21%--free_unref_page_prepare.part.64
+               |          
+                --1.24%--__page_cache_release
+                          mem_cgroup_uncharge
+                          uncharge_batch
+
+     4.77%     1.23%  move_pages  [kernel.kallsyms]  [k] new_page_node
+            |          
+            |--3.53%--new_page_node
+            |          __alloc_pages_nodemask
+            |          |          
+            |           --2.33%--get_page_from_freelist
+            |                     |          
+            |                      --1.11%--__inc_numa_state
+            |          
+             --1.23%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x7f66f878d4d9
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_move_pages
+                       SYSC_move_pages
+                       migrate_pages
+                       new_page_node
+
+     4.70%     1.13%  move_pages  [kernel.kallsyms]  [k] try_to_unmap_one
+            |          
+            |--3.57%--try_to_unmap_one
+            |          |          
+            |          |--2.44%--ptep_clear_flush
+            |          |          flush_tlb_mm_range
+            |          |          flush_tlb_func_common.constprop.11
+            |          |          |          
+            |          |           --1.22%--native_flush_tlb_one_user
+            |          |          
+            |           --1.13%--page_vma_mapped_walk
+            |                     _raw_spin_lock
+            |          
+             --1.13%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x7f66f878d4d9
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_move_pages
+                       SYSC_move_pages
+                       migrate_pages
+                       try_to_unmap
+                       rmap_walk
+                       rmap_walk_anon
+                       try_to_unmap_one
+
+     4.65%     3.54%  move_pages  [kernel.kallsyms]  [k] get_page_from_freelist
+            |          
+            |--3.54%--0xf8e258d4c544155
+            |          0x7f66f86ac830
+            |          |          
+            |          |--2.32%--0x400c61
+            |          |          page_fault
+            |          |          do_page_fault
+            |          |          __do_page_fault
+            |          |          handle_mm_fault
+            |          |          __handle_mm_fault
+            |          |          handle_pte_fault
+            |          |          alloc_pages_vma
+            |          |          __alloc_pages_nodemask
+            |          |          get_page_from_freelist
+            |          |          
+            |           --1.22%--0x7f66f878d4d9
+            |                     entry_SYSCALL_64_after_hwframe
+            |                     do_syscall_64
+            |                     sys_move_pages
+            |                     SYSC_move_pages
+            |                     migrate_pages
+            |                     new_page_node
+            |                     __alloc_pages_nodemask
+            |                     get_page_from_freelist
+            |          
+             --1.11%--get_page_from_freelist
+                       __inc_numa_state
+
+     4.09%     0.00%  move_pages  [kernel.kallsyms]  [k] mem_cgroup_try_charge
+            |
+            ---mem_cgroup_try_charge
+               |          
+                --3.77%--try_charge
+
+     3.77%     3.77%  move_pages  [kernel.kallsyms]  [k] try_charge
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400c61
+               page_fault
+               do_page_fault
+               __do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               mem_cgroup_try_charge
+               try_charge
+
+     3.62%     3.62%  move_pages  [kernel.kallsyms]  [k] _raw_spin_lock
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               |          
+               |--2.49%--0x400c61
+               |          page_fault
+               |          do_page_fault
+               |          __do_page_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          _raw_spin_lock
+               |          
+                --1.13%--0x7f66f878d4d9
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          sys_move_pages
+                          SYSC_move_pages
+                          migrate_pages
+                          try_to_unmap
+                          rmap_walk
+                          rmap_walk_anon
+                          try_to_unmap_one
+                          page_vma_mapped_walk
+                          _raw_spin_lock
+
+     3.59%     0.00%  move_pages  [kernel.kallsyms]  [k] free_unref_page_commit
+            |
+            ---free_unref_page_commit
+               |          
+               |--2.38%--free_pcppages_bulk
+               |          
+                --1.21%--__mod_zone_page_state
+
+     3.58%     0.00%  move_pages  [kernel.kallsyms]  [k] free_unref_page
+            |
+            ---free_unref_page
+               |          
+               |--2.38%--free_unref_page_commit
+               |          free_pcppages_bulk
+               |          
+                --1.21%--free_unref_page_prepare.part.64
+
+     2.71%     1.22%  move_pages  [kernel.kallsyms]  [k] flush_tlb_func_common.constprop.11
+            |          
+            |--1.49%--flush_tlb_func_common.constprop.11
+            |          native_flush_tlb_one_user
+            |          
+             --1.22%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x7f66f878d4d9
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_move_pages
+                       SYSC_move_pages
+                       migrate_pages
+                       try_to_unmap
+                       rmap_walk
+                       rmap_walk_anon
+                       try_to_unmap_one
+                       ptep_clear_flush
+                       flush_tlb_mm_range
+                       flush_tlb_func_common.constprop.11
+
+     2.71%     0.00%  move_pages  [kernel.kallsyms]  [k] flush_tlb_mm_range
+            |
+            ---flush_tlb_mm_range
+               flush_tlb_func_common.constprop.11
+               |          
+                --1.49%--native_flush_tlb_one_user
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] ptep_clear_flush
+            |
+            ---ptep_clear_flush
+               flush_tlb_mm_range
+               flush_tlb_func_common.constprop.11
+               |          
+                --1.22%--native_flush_tlb_one_user
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] sys_exit_group
+            |
+            ---sys_exit_group
+               do_group_exit
+               do_exit
+               mmput
+               exit_mmap
+               tlb_finish_mmu
+               arch_tlb_finish_mmu
+               tlb_flush_mmu_free
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.21%--free_unref_page_list
+                          free_unref_page_commit
+                          __mod_zone_page_state
+
+     2.44%     1.22%  move_pages  [kernel.kallsyms]  [k] release_pages
+            |          
+            |--1.22%--entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          sys_exit_group
+            |          do_group_exit
+            |          do_exit
+            |          mmput
+            |          exit_mmap
+            |          tlb_finish_mmu
+            |          arch_tlb_finish_mmu
+            |          tlb_flush_mmu_free
+            |          free_pages_and_swap_cache
+            |          release_pages
+            |          
+             --1.21%--release_pages
+                       free_unref_page_list
+                       free_unref_page_commit
+                       __mod_zone_page_state
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] do_group_exit
+            |
+            ---do_group_exit
+               do_exit
+               mmput
+               exit_mmap
+               tlb_finish_mmu
+               arch_tlb_finish_mmu
+               tlb_flush_mmu_free
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.21%--free_unref_page_list
+                          free_unref_page_commit
+                          __mod_zone_page_state
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] do_exit
+            |
+            ---do_exit
+               mmput
+               exit_mmap
+               tlb_finish_mmu
+               arch_tlb_finish_mmu
+               tlb_flush_mmu_free
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.21%--free_unref_page_list
+                          free_unref_page_commit
+                          __mod_zone_page_state
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] mmput
+            |
+            ---mmput
+               exit_mmap
+               tlb_finish_mmu
+               arch_tlb_finish_mmu
+               tlb_flush_mmu_free
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.21%--free_unref_page_list
+                          free_unref_page_commit
+                          __mod_zone_page_state
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] exit_mmap
+            |
+            ---exit_mmap
+               tlb_finish_mmu
+               arch_tlb_finish_mmu
+               tlb_flush_mmu_free
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.21%--free_unref_page_list
+                          free_unref_page_commit
+                          __mod_zone_page_state
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] tlb_finish_mmu
+            |
+            ---tlb_finish_mmu
+               arch_tlb_finish_mmu
+               tlb_flush_mmu_free
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.21%--free_unref_page_list
+                          free_unref_page_commit
+                          __mod_zone_page_state
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] arch_tlb_finish_mmu
+            |
+            ---arch_tlb_finish_mmu
+               tlb_flush_mmu_free
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.21%--free_unref_page_list
+                          free_unref_page_commit
+                          __mod_zone_page_state
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] tlb_flush_mmu_free
+            |
+            ---tlb_flush_mmu_free
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.21%--free_unref_page_list
+                          free_unref_page_commit
+                          __mod_zone_page_state
+
+     2.44%     0.00%  move_pages  [kernel.kallsyms]  [k] free_pages_and_swap_cache
+            |
+            ---free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.21%--free_unref_page_list
+                          free_unref_page_commit
+                          __mod_zone_page_state
+
+     2.42%     2.42%  move_pages  [kernel.kallsyms]  [k] _vm_normal_page
+            |
+            ---0xc813e0
+               0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_migrate_pages
+               SYSC_migrate_pages
+               do_migrate_pages.part.31
+               migrate_to_node
+               queue_pages_range
+               walk_page_range
+               __walk_page_range
+               queue_pages_pte_range
+               _vm_normal_page
+
+     2.39%     0.00%  move_pages  [kernel.kallsyms]  [k] remove_migration_ptes
+            |
+            ---remove_migration_ptes
+               rmap_walk
+               rmap_walk_anon
+               |          
+                --1.17%--remove_migration_pte
+                          page_vma_mapped_walk
+
+     2.38%     2.38%  move_pages  [kernel.kallsyms]  [k] free_pcppages_bulk
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_move_pages
+               SYSC_move_pages
+               migrate_pages
+               __put_page
+               free_unref_page
+               free_unref_page_commit
+               free_pcppages_bulk
+
+     2.32%     2.32%  move_pages  [kernel.kallsyms]  [k] clear_page_erms
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400c61
+               page_fault
+               do_page_fault
+               __do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               alloc_pages_vma
+               __alloc_pages_nodemask
+               clear_page_erms
+
+     2.30%     1.17%  move_pages  [kernel.kallsyms]  [k] page_vma_mapped_walk
+            |          
+            |--1.17%--0xf8e258d4c544155
+            |          0x7f66f86ac830
+            |          0x7f66f878d4d9
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          sys_move_pages
+            |          SYSC_move_pages
+            |          migrate_pages
+            |          remove_migration_ptes
+            |          rmap_walk
+            |          rmap_walk_anon
+            |          remove_migration_pte
+            |          page_vma_mapped_walk
+            |          
+             --1.13%--page_vma_mapped_walk
+                       _raw_spin_lock
+
+     2.04%     2.04%  move_pages  [kernel.kallsyms]  [k] sync_regs
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400c61
+               error_entry
+               sync_regs
+
+     1.50%     0.00%  move_pages  [kernel.kallsyms]  [k] __lru_cache_add
+            |
+            ---__lru_cache_add
+               |          
+                --1.16%--__indirect_thunk_start
+
+     1.49%     1.49%  move_pages  [kernel.kallsyms]  [k] native_flush_tlb_one_user
+            |          
+             --1.22%--0xf8e258d4c544155
+                       0x7f66f86ac830
+                       0x7f66f878d4d9
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       sys_move_pages
+                       SYSC_move_pages
+                       migrate_pages
+                       try_to_unmap
+                       rmap_walk
+                       rmap_walk_anon
+                       try_to_unmap_one
+                       ptep_clear_flush
+                       flush_tlb_mm_range
+                       flush_tlb_func_common.constprop.11
+                       native_flush_tlb_one_user
+
+     1.24%     1.24%  move_pages  [kernel.kallsyms]  [k] uncharge_batch
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_move_pages
+               SYSC_move_pages
+               migrate_pages
+               __put_page
+               __page_cache_release
+               mem_cgroup_uncharge
+               uncharge_batch
+
+     1.24%     0.00%  move_pages  [kernel.kallsyms]  [k] __page_cache_release
+            |
+            ---__page_cache_release
+               mem_cgroup_uncharge
+               uncharge_batch
+
+     1.24%     0.00%  move_pages  [kernel.kallsyms]  [k] mem_cgroup_uncharge
+            |
+            ---mem_cgroup_uncharge
+               uncharge_batch
+
+     1.21%     1.21%  move_pages  [kernel.kallsyms]  [k] __mod_zone_page_state
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_exit_group
+               do_group_exit
+               do_exit
+               mmput
+               exit_mmap
+               tlb_finish_mmu
+               arch_tlb_finish_mmu
+               tlb_flush_mmu_free
+               free_pages_and_swap_cache
+               release_pages
+               free_unref_page_list
+               free_unref_page_commit
+               __mod_zone_page_state
+
+     1.21%     0.00%  move_pages  [kernel.kallsyms]  [k] free_unref_page_list
+            |
+            ---free_unref_page_list
+               free_unref_page_commit
+               __mod_zone_page_state
+
+     1.21%     1.21%  move_pages  [kernel.kallsyms]  [k] free_unref_page_prepare.part.64
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_move_pages
+               SYSC_move_pages
+               migrate_pages
+               __put_page
+               free_unref_page
+               free_unref_page_prepare.part.64
+
+     1.19%     1.19%  move_pages  move_pages         [.] 0x0000000000000d02
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400d02
+
+     1.19%     0.00%  move_pages  move_pages         [.] 0x0000000000400d02
+            |
+            ---0x400d02
+
+     1.17%     0.00%  move_pages  [kernel.kallsyms]  [k] remove_migration_pte
+            |
+            ---remove_migration_pte
+               page_vma_mapped_walk
+
+     1.17%     1.17%  move_pages  [kernel.kallsyms]  [k] page_add_new_anon_rmap
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400c61
+               page_fault
+               do_page_fault
+               __do_page_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               page_add_new_anon_rmap
+
+     1.16%     1.16%  move_pages  [kernel.kallsyms]  [k] __indirect_thunk_start
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_move_pages
+               SYSC_move_pages
+               migrate_pages
+               putback_lru_page
+               lru_cache_add
+               __lru_cache_add
+               __indirect_thunk_start
+
+     1.16%     0.00%  move_pages  [kernel.kallsyms]  [k] putback_lru_page
+            |
+            ---putback_lru_page
+               lru_cache_add
+               __lru_cache_add
+               __indirect_thunk_start
+
+     1.16%     0.00%  move_pages  [kernel.kallsyms]  [k] lru_cache_add
+            |
+            ---lru_cache_add
+               __lru_cache_add
+               __indirect_thunk_start
+
+     1.12%     1.12%  move_pages  [kernel.kallsyms]  [k] total_mapcount
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_move_pages
+               SYSC_move_pages
+               migrate_pages
+               try_to_unmap
+               rmap_walk
+               rmap_walk_anon
+               page_mapcount_is_zero
+               total_mapcount
+
+     1.12%     0.00%  move_pages  [kernel.kallsyms]  [k] page_mapcount_is_zero
+            |
+            ---page_mapcount_is_zero
+               total_mapcount
+
+     1.11%     1.11%  move_pages  [kernel.kallsyms]  [k] __inc_numa_state
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x7f66f878d4d9
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               sys_move_pages
+               SYSC_move_pages
+               migrate_pages
+               new_page_node
+               __alloc_pages_nodemask
+               get_page_from_freelist
+               __inc_numa_state
+
+     1.02%     1.02%  move_pages  [kernel.kallsyms]  [k] native_irq_return_iret
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400c61
+               native_irq_return_iret
+
+     1.01%     1.01%  move_pages  move_pages         [.] 0x0000000000000c70
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400c70
+
+     1.01%     0.00%  move_pages  move_pages         [.] 0x0000000000400c70
+            |
+            ---0x400c70
+
+     0.68%     0.34%  move_pages  [kernel.kallsyms]  [k] lru_cache_add_active_or_unevictable
+     0.68%     0.68%  move_pages  [kernel.kallsyms]  [k] swapgs_restore_regs_and_return_to_usermode
+            |
+            ---0xf8e258d4c544155
+               0x7f66f86ac830
+               0x400c61
+               swapgs_restore_regs_and_return_to_usermode
+
+     0.54%     0.54%  move_pages  [kernel.kallsyms]  [k] filemap_map_pages
+     0.44%     0.00%  move_pages  [kernel.kallsyms]  [k] vm_mmap_pgoff
+     0.44%     0.00%  move_pages  [kernel.kallsyms]  [k] do_mmap
+     0.44%     0.00%  move_pages  [kernel.kallsyms]  [k] mmap_region
+     0.34%     0.34%  move_pages  [kernel.kallsyms]  [k] __pagevec_lru_add_fn
+     0.34%     0.00%  move_pages  [kernel.kallsyms]  [k] pagevec_lru_move_fn
+     0.32%     0.32%  move_pages  [kernel.kallsyms]  [k] get_mem_cgroup_from_mm
+     0.30%     0.30%  move_pages  [kernel.kallsyms]  [k] queue_pages_test_walk
+     0.30%     0.00%  move_pages  [kernel.kallsyms]  [k] sys_mbind
+     0.30%     0.00%  move_pages  [kernel.kallsyms]  [k] SYSC_mbind
+     0.30%     0.30%  move_pages  [kernel.kallsyms]  [k] kernfs_put
+     0.30%     0.00%  move_pages  [unknown]          [k] 0x0000000000000001
+     0.30%     0.00%  move_pages  libc-2.23.so       [.] 0x00007f66f87548eb
+     0.30%     0.00%  move_pages  [kernel.kallsyms]  [k] sys_getdents
+     0.30%     0.00%  move_pages  [kernel.kallsyms]  [k] iterate_dir
+     0.30%     0.00%  move_pages  [kernel.kallsyms]  [k] kernfs_fop_readdir
+     0.29%     0.00%  move_pages  [unknown]          [k] 0x0000000000c810e0
+     0.29%     0.00%  move_pages  [unknown]          [k] 0000000000000000
+     0.29%     0.00%  move_pages  libc-2.23.so       [.] 0x00007f66f86c73f0
+     0.29%     0.29%  move_pages  [kernel.kallsyms]  [k] unmap_page_range
+     0.29%     0.00%  move_pages  ld-2.23.so         [.] 0x00007f66f8e994ba
+     0.29%     0.00%  move_pages  [kernel.kallsyms]  [k] sys_mmap
+     0.29%     0.00%  move_pages  [kernel.kallsyms]  [k] sys_mmap_pgoff
+     0.29%     0.00%  move_pages  [kernel.kallsyms]  [k] do_munmap
+     0.29%     0.00%  move_pages  [kernel.kallsyms]  [k] unmap_region
+     0.29%     0.00%  move_pages  [kernel.kallsyms]  [k] unmap_vmas
+     0.29%     0.00%  move_pages  [kernel.kallsyms]  [k] unmap_single_vma
+     0.28%     0.28%  move_pages  libc-2.23.so       [.] 0x00000000001432fb
+     0.28%     0.00%  move_pages  [unknown]          [.] 0x0000033500000331
+     0.28%     0.00%  move_pages  libc-2.23.so       [.] 0x00007f66f87cf2fb
+     0.27%     0.00%  move_pages  [unknown]          [k] 0x0000000000000040
+     0.27%     0.00%  move_pages  ld-2.23.so         [.] 0x00007f66f8e97632
+     0.27%     0.00%  move_pages  ld-2.23.so         [.] 0x00007f66f8e820db
+     0.27%     0.00%  move_pages  ld-2.23.so         [.] 0x00007f66f8e99557
+     0.27%     0.00%  move_pages  [kernel.kallsyms]  [k] sys_mprotect
+     0.27%     0.00%  move_pages  [kernel.kallsyms]  [k] do_mprotect_pkey
+     0.27%     0.00%  move_pages  [kernel.kallsyms]  [k] mprotect_fixup
+     0.27%     0.00%  move_pages  [kernel.kallsyms]  [k] change_protection
+     0.27%     0.00%  move_pages  [kernel.kallsyms]  [k] change_protection_range
+     0.27%     0.00%  move_pages  ld-2.23.so         [.] 0x00007f66f8e86c27
+     0.27%     0.00%  move_pages  ld-2.23.so         [.] 0x00007f66f8e9bc94
+     0.25%     0.00%  move_pages  ld-2.23.so         [.] 0x00007f66f8e7ec30
+     0.16%     0.16%  move_pages  [kernel.kallsyms]  [k] perf_iterate_ctx
+     0.16%     0.00%  move_pages  [unknown]          [k] 0x00007f565b39f777
+     0.16%     0.00%  move_pages  [kernel.kallsyms]  [k] sys_execve
+     0.16%     0.00%  move_pages  [kernel.kallsyms]  [k] do_execveat_common.isra.34
+     0.16%     0.00%  move_pages  [kernel.kallsyms]  [k] search_binary_handler
+     0.16%     0.00%  move_pages  [kernel.kallsyms]  [k] load_elf_binary
+     0.16%     0.00%  move_pages  [kernel.kallsyms]  [k] elf_map
+     0.16%     0.00%  move_pages  [kernel.kallsyms]  [k] vm_mmap
+     0.16%     0.00%  move_pages  [kernel.kallsyms]  [k] perf_event_mmap
+     0.07%     0.00%  perf        [unknown]          [k] 0x00007f565b39f777
+     0.07%     0.00%  perf        [kernel.kallsyms]  [k] entry_SYSCALL_64_after_hwframe
+     0.07%     0.00%  perf        [kernel.kallsyms]  [k] do_syscall_64
+     0.07%     0.00%  perf        [kernel.kallsyms]  [k] sys_execve
+     0.07%     0.00%  perf        [kernel.kallsyms]  [k] do_execveat_common.isra.34
+     0.07%     0.00%  perf        [kernel.kallsyms]  [k] search_binary_handler
+     0.07%     0.00%  perf        [kernel.kallsyms]  [k] load_elf_binary
+     0.07%     0.00%  perf        [kernel.kallsyms]  [k] setup_new_exec
+     0.07%     0.00%  perf        [kernel.kallsyms]  [k] perf_event_exec
+     0.05%     0.05%  perf        [kernel.kallsyms]  [k] perf_event_addr_filters_exec
+     0.05%     0.00%  perf        [kernel.kallsyms]  [k] perf_iterate_ctx
+     0.02%     0.00%  perf        [kernel.kallsyms]  [k] ctx_resched
+     0.02%     0.00%  perf        [kernel.kallsyms]  [k] x86_pmu_enable
+     0.02%     0.00%  perf        [kernel.kallsyms]  [k] intel_pmu_enable_all
+     0.02%     0.00%  perf        [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.19
+     0.01%     0.01%  perf        [kernel.kallsyms]  [k] end_repeat_nmi
+     0.00%     0.00%  perf        [kernel.kallsyms]  [k] acpi_os_read_memory
+     0.00%     0.00%  perf        [kernel.kallsyms]  [k] native_sched_clock
+     0.00%     0.00%  perf        [kernel.kallsyms]  [k] intel_pmu_handle_irq
+     0.00%     0.00%  perf        [kernel.kallsyms]  [k] native_write_msr
+
+
+#
+# (Tip: For hierarchical output, try: perf report --hierarchy)
+#

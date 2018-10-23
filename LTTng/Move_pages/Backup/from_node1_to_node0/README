@@ -1,0 +1,3 @@
+process bind on node 0
+allocate memory on node 1
+migrate from node 1 to node 0
